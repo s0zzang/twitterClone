@@ -5,7 +5,7 @@ import { auth } from "../firebase";
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const user = auth.currentUser; // 로그인 여부 반환
   console.log(user);
-  if (!user) <Navigate to="/login" />;
+  if (!user) return <Navigate to="/login" />;
 
   return children;
 };
