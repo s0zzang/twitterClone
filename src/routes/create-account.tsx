@@ -3,56 +3,19 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import * as React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import {
+  Error,
+  Form,
+  Input,
+  Switcher,
+  Title,
+  Wrapper,
+} from "../components/auth-components";
 import { auth } from "../firebase";
 
 const errors = {
   "auth/email-already-in-use": "이미 존재하는 이메일 입니다.",
 };
-
-const Wrapper = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 420px;
-  padding: 50px 0;
-`;
-const Title = styled.h1`
-  font-size: 42px;
-`;
-const Form = styled.form`
-  margin-top: 50px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-`;
-const Input = styled.input`
-  padding: 10px 20px;
-  border-radius: 15px;
-  border: none;
-  width: 100%;
-  font-size: 16px;
-
-  &[type="submit"] {
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-`;
-const Error = styled.span`
-  font-weight: 600;
-  color: tomato;
-`;
-const Switcher = styled.span`
-  margin-top: 20px;
-  a {
-    color: #1d9bf0;
-  }
-`;
 
 export default function CreateAccount() {
   const navigate = useNavigate();
