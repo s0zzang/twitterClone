@@ -11,6 +11,7 @@ import {
   Title,
   Wrapper,
 } from "../components/auth-components";
+import GithubBtn from "../components/github-btn";
 import { auth } from "../firebase";
 
 const errors = {
@@ -101,6 +102,7 @@ export default function CreateAccount() {
       <Switcher>
         Already have an account? <Link to="/login">Log In &rarr;</Link>
       </Switcher>
+      <GithubBtn />
     </Wrapper>
   );
 }
