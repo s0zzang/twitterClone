@@ -73,6 +73,10 @@ export default function Login() {
         Don't have an account?{" "}
         <Link to="/create-account">Create one &rarr;</Link>
       </Switcher>
+      <Switcher>
+        Foggot Your Password?{" "}
+        <Link to="/reset-password">Click Here &rarr;</Link>
+      </Switcher>
       <GithubBtn />
     </Wrapper>
   );

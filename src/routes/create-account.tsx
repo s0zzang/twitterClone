@@ -102,6 +102,10 @@ export default function CreateAccount() {
       <Switcher>
         Already have an account? <Link to="/login">Log In &rarr;</Link>
       </Switcher>
+      <Switcher>
+        Foggot Your Password?{" "}
+        <Link to="/reset-password">Click Here &rarr;</Link>
+      </Switcher>
       <GithubBtn />
     </Wrapper>
   );
