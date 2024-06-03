@@ -1,5 +1,7 @@
+import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { auth, db } from "../firebase";
 
 const Form = styled.form`
   display: flex;
@@ -39,7 +41,6 @@ const AttachFileButton = styled.label`
 const AttachFileInput = styled.input`
   display: none;
 `;
-
 const SubmitBtn = styled.input`
   background-color: #1d9bf0;
   color: white;
@@ -68,8 +69,28 @@ const PostTweetForm = () => {
     if (files && files.length === 1) setFile(files[0]);
   };
 
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const user = auth.currentUser;
+    if (!user || isLoading || !tweet || tweet.length > 180) return;
+
+    try {
+      setLoading(true);
+      await addDoc(collection(db, "tweets"), {
+        tweet,
+        createdAt: Date.now(),
+        username: user.displayName || "Anonymous",
+        userId: user.uid, // 나중에 게시물 삭제할 때 비교 예정
+      });
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <Form>
+    <Form onSubmit={onSubmit}>
       <TextArea
         rows={5}
         maxLength={180}
