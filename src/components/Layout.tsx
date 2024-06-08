@@ -6,31 +6,33 @@ const Wrapper = styled.div`
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 4fr;
-  height: 100px;
-  padding: 50px 0;
+  height: 100%;
+  padding: 50px 0px;
   width: 100%;
   max-width: 860px;
 `;
+
 const Menu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 `;
+
 const MenuItem = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #fff;
+  border: 2px solid white;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   svg {
     width: 30px;
-    fill: #fff;
+    fill: white;
   }
-  &.logout {
+  &.log-out {
     border-color: tomato;
     svg {
       fill: tomato;

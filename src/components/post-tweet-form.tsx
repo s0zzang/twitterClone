@@ -9,26 +9,27 @@ const Form = styled.form`
   flex-direction: column;
   gap: 10px;
 `;
+
 const TextArea = styled.textarea`
-  border: 2px solid #fff;
+  border: 2px solid white;
   padding: 20px;
   border-radius: 20px;
   font-size: 16px;
-  color: #fff;
-  background: #000;
+  color: white;
+  background-color: black;
   width: 100%;
   resize: none;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   &::placeholder {
     font-size: 16px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto;
   }
   &:focus {
     outline: none;
     border-color: #1d9bf0;
   }
 `;
+
 const AttachFileButton = styled.label`
   padding: 10px 0px;
   color: #1d9bf0;
@@ -39,9 +40,11 @@ const AttachFileButton = styled.label`
   font-weight: 600;
   cursor: pointer;
 `;
+
 const AttachFileInput = styled.input`
   display: none;
 `;
+
 const SubmitBtn = styled.input`
   background-color: #1d9bf0;
   color: white;
